@@ -45,6 +45,6 @@ hs_err_pid*
 
 .idea
 datacenter-flume.iml
-flume-ng-sources/flume-ng-sources.iml
+flume-ng-sources/datacenter-flume-ng-sources.iml
 flume-ng-sources/target
 
