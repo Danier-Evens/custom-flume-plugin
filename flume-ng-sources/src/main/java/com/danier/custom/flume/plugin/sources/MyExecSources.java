@@ -1,4 +1,4 @@
-package com.souche.flume.sources;
+package com.danier.custom.flume.plugin.sources;
 
 import com.google.common.util.concurrent.ThreadFactoryBuilder;
 import org.apache.flume.Context;

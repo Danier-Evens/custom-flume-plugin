@@ -2,15 +2,15 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.souche.flume</groupId>
-    <artifactId>datacenter-flume</artifactId>
+    <groupId>com.danier.custom.flume.plugin</groupId>
+    <artifactId>flume-plugin</artifactId>
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>flume-ng-sources</module>
     </modules>
     <packaging>pom</packaging>
 
-    <name>datacenter-flume</name>
+    <name>flume-plugin</name>
     <url>http://maven.apache.org</url>
 
     <properties>

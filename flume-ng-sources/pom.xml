@@ -1,16 +1,16 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>datacenter-flume</artifactId>
-        <groupId>com.souche.flume</groupId>
+        <artifactId>flume-plugin</artifactId>
+        <groupId>com.danier.custom.flume.plugin</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>datacenter-flume-ng-sources</artifactId>
+    <artifactId>custom-flume-ng-sources</artifactId>
     <packaging>jar</packaging>
 
-    <name>datacenter-flume-ng-sources</name>
+    <name>custom-flume-ng-sources</name>
     <url>http://maven.apache.org</url>
 
     <properties>

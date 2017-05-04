@@ -1,4 +1,4 @@
-package com.souche.flume.sources;
+package com.danier.custom.flume.plugin.sources;
 
 import org.apache.flume.Context;
 import org.apache.flume.EventDeliveryException;
