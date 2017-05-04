@@ -1,4 +1,4 @@
-# datacenter-flume
+# custom-flume-plugin
 
 ## flume自定义插件测试样例
 
