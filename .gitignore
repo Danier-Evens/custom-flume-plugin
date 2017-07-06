@@ -48,3 +48,6 @@ flume-plugin.iml
 flume-ng-sources/custom-flume-ng-sources.iml
 flume-ng-sources/target
 
+flume-ng-sinks/flume-ng-sinks.iml
+flume-ng-sinks/target
+

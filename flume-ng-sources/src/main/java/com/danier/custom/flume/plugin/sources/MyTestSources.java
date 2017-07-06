@@ -57,7 +57,6 @@ public class MyTestSources extends AbstractSource implements PollableSource, Con
     public Status process() throws EventDeliveryException {
         Status status = Status.READY;
         try {
-
             while (true) {
                 String uuid = UUID.randomUUID().toString();
                 sourceCounter.incrementAppendAcceptedCount();
@@ -65,20 +64,9 @@ public class MyTestSources extends AbstractSource implements PollableSource, Con
                 Thread.sleep(1000);
             }
         } catch (Exception e) {
+            status = Status.BACKOFF;
             logger.error("process error {}", e);
         }
         return status;
-    }
-
-    @Override
-    public long getBackOffSleepIncrement() {
-        //TODO
-        return 0;
-    }
-
-    @Override
-    public long getMaxBackOffSleepInterval() {
-        //TODO
-        return 0;
     }
 }
