@@ -8,10 +8,10 @@
 
 ## flume自定义插件测试样例
 
-* 步骤一、打包： mvn clean install
-* 步骤二、export FLUME_HOME=xxxx （可不配置，步骤三、四、五的$FLUME_HOME变量可以显示声明）
-* 步骤三、cp flume-ng-sources/target/custom-flume-ng-sources-1.0-SNAPSHOT.jar > $FLUME_HOME/lib
-* 步骤四、配置flume配置文件  $FLUME_HOME/conf/myexplame.conf
+* 步骤一、打包： `mvn clean install`
+* 步骤二、`export FLUME_HOME=xxxx` （可不配置，步骤三、四、五的$FLUME_HOME变量可以显示声明）
+* 步骤三、`cp flume-ng-sources/target/custom-flume-ng-sources-1.0-SNAPSHOT.jar > $FLUME_HOME/lib`
+* 步骤四、配置flume配置文件  `$FLUME_HOME/conf/myexplame.conf`
 ```
   # myexplame.conf: A single-node Flume configuration
   # Name the components on this agent
@@ -34,7 +34,7 @@
   a1.sources.r1.channels = c1
   a1.sinks.k1.channel = c1
 ```
-* 步骤五、启动脚本命令： $FLUME_HOME/bin/flume-ng agent --conf $FLUME_HOME/conf --conf-file $FLUME_HOME/conf/myexplame.conf --name a1 -Dflume.root.logger=INFO,console
+* 步骤五、启动脚本命令： `$FLUME_HOME/bin/flume-ng agent --conf $FLUME_HOME/conf --conf-file $FLUME_HOME/conf/myexplame.conf --name a1 -Dflume.root.logger=INFO,console`
 ```
   2017-05-04 17:53:43,344 (SinkRunner-PollingRunner-DefaultSinkProcessor) [INFO - org.apache.flume.sink.LoggerSink.process(LoggerSink.java:70)] Event: { headers:{id=1234567} body: 39 36 65 36 62 35 32 65 2D 64 35 64 66 2D 34 62 96e6b52e-d5df-4b }
   2017-05-04 17:53:44,344 (SinkRunner-PollingRunner-DefaultSinkProcessor) [INFO - org.apache.flume.sink.LoggerSink.process(LoggerSink.java:70)] Event: { headers:{id=1234567} body: 33 30 31 32 32 63 30 62 2D 38 36 38 35 2D 34 39 30122c0b-8685-49 }
