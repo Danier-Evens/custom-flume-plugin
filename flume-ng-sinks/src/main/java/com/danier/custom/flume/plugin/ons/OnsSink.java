@@ -24,15 +24,16 @@ import java.util.Properties;
 public class OnsSink extends AbstractSink implements Configurable {
 
     private static final Logger logger = LoggerFactory.getLogger(OnsSink.class);
+
+    private String topic;
+    private Producer producer;
+    private Properties onsProps;
+    private SinkCounter counter;
+    private List<Message> messageList;
     public static final String KEY_HDR = "key";
     public static final String TOPIC_HDR = "topic";
-    private List<Message> messageList;
-    private Properties onsProps;
-    private Producer producer;
-    private String topic;
     private String tag = OnsConfigConstants.DEFAULT_TAG;
     private int batchSize = OnsConfigConstants.DEFAULT_BATCH_SIZE;
-    private SinkCounter counter;
 
     @Override
     public synchronized void start() {
@@ -46,8 +47,8 @@ public class OnsSink extends AbstractSink implements Configurable {
     public synchronized void stop() {
         producer.shutdown();
         counter.stop();
-        logger.info("ons Sink {} stopped. Metrics: {}", getName(), counter);
         super.stop();
+        logger.info("ons Sink {} stopped. Metrics: {}", getName(), counter);
     }
 
     /**
@@ -128,11 +129,11 @@ public class OnsSink extends AbstractSink implements Configurable {
 
             // publish batch and commit.
             if (processedEvents > 0) {
-                long startTime = System.nanoTime();
+//                long startTime = System.nanoTime();
                 for (Message message : messageList) {
                     producer.send(message);
                 }
-                long endTime = System.nanoTime();
+//                long endTime = System.nanoTime();
 //                counter.addToONSEventSendTimer((endTime - startTime) / (1000 * 1000));
                 counter.addToEventDrainSuccessCount(Long.valueOf(messageList.size()));
             }
